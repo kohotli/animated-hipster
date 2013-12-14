@@ -1,0 +1,1 @@
+This is supposed to be a global config, it goes in /etc/mpd.conf not /home/$USER/.mpdconf
