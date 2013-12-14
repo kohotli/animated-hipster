@@ -1,0 +1,5 @@
+map j <down>
+map k <up>
+highlight Hint::after -append font-size: 11pt
+set hintchars="abcdefghijklmnopqrstuvwxyz"
+set gui=none

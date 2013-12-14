@@ -1,0 +1,3 @@
+function pandora
+	pianobar
+end

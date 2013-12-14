@@ -1,0 +1,36 @@
+Xcursor.theme: ecliz
+
+URxvt*termName: rxvt
+
+## borderless and no scrollbar
+URxvt*scrollBar_right: false
+URxvt*scrollBar: false
+URxvt*borderLess: false
+
+!*foreground: #FBF7AA
+*foreground: #FFFFFF
+*background: #212121
+*color0: #212121
+*color8: #424242
+*color1: #C95400
+*color9: #E58900
+*color2: #1DD600
+*color10: #4CEF00
+*color3: #C1A200
+*color11: #D4D800
+*color4: #0049D8
+*color12: #0089ED
+*color5: #7500AD
+*color13: #B500E2
+*color6: #00A3BA
+*color14: #00CEA9
+*color7: #EEEEEE
+*color15: #FBFBFB
+
+## Perl scripts
+URxvt.perl-ext-common:	default
+
+#URxvt*font: xft:inconsolata:size=10
+URxvt*font: xft:gohufont
+
+URxvt.iconFile: /usr/share/icons/elementary/apps/128/utilities-terminal.svg
