@@ -175,8 +175,8 @@ end
 
 # Style for active/inactive windows
 style :clients do
-  active    "#2121213", 0
-  inactive  "#2212121", 0
+  active    "#212121", 0
+  inactive  "#212121", 0
   margin    0
   width     50
 end
@@ -388,7 +388,7 @@ grab "W-space", :WindowFull
 grab "W-equal", :WindowZaphod
 
 # Raise window
-grab "W-r", :WindowRaise
+grab "W-y", :WindowRaise
 
 # Lower window
 grab "W-t", :WindowLower
@@ -434,6 +434,7 @@ grab "W-c", [ :bottom_right, :bottom_right66, :bottom_right33 ]
 grab "W-Return", "x-terminal-emulator"
 grab "W-b", "x-www-browser"
 grab "W-m", 'urxvt -name "ncmpcpp" -e ncmpcpp'
+grab "W-r", "dmenu_run"
 
 # Music controls
 grab "XF86AudioPlay", "ncmpcpp toggle"

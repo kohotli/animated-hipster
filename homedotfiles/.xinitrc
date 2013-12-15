@@ -6,4 +6,6 @@ dropbox start
 canto-fetch -db
 redshift -l 40.0812911:-82.870252 -t 5500k:4500k &
 xset r rate 200 33
+xcompmgr -n &
+#exec i3
 exec lxsession
