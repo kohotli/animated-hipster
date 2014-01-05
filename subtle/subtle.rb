@@ -177,7 +177,7 @@ end
 style :clients do
   active    "#212121", 0
   inactive  "#212121", 0
-  margin    0
+  margin    11
   width     50
 end
 
@@ -212,25 +212,28 @@ end
 # http://subforge.org/projects/subtle/wiki/Gravity
 #
 
+# Width of the gap in percent
+gap = 1
+
 # Top left
 gravity :top_left,       [   0,   0,  50,  50 ]
-gravity :top_left66,     [   0,   0,  50,  66 ]
-gravity :top_left33,     [   0,   0,  50,  34 ]
+#gravity :top_left66,     [   0,   0,  50,  66 ]
+#gravity :top_left33,     [   0,   0,  50,  34 ]
 
 # Top
 gravity :top,            [   0,   0, 100,  50 ]
-gravity :top66,          [   0,   0, 100,  66 ]
-gravity :top33,          [   0,   0, 100,  34 ]
+#gravity :top66,          [   0,   0, 100,  66 ]
+#gravity :top33,          [   0,   0, 100,  34 ]
 
 # Top right
-gravity :top_right,      [  50,   0,  50,  50 ]
-gravity :top_right66,    [  50,   0,  50,  66 ]
-gravity :top_right33,    [  50,   0,  50,  33 ]
+gravity :top_right,      [  50 ,   0,  50,  50 ]
+#gravity :top_right66,    [  50,   0,  50,  66 ]
+#gravity :top_right33,    [  50,   0,  50,  33 ]
 
 # Left
 gravity :left,           [   0,   0,  50, 100 ]
-gravity :left66,         [   0,   0,  66, 100 ]
-gravity :left33,         [   0,   0,  33, 100 ]
+#gravity :left66,         [   0,   0,  66, 100 ]
+#gravity :left33,         [   0,   0,  33, 100 ]
 
 # Center
 gravity :center,         [   0,   0, 100, 100 ]
@@ -239,23 +242,23 @@ gravity :center33,       [  33,  33,  33,  33 ]
 
 # Right
 gravity :right,          [  50,   0,  50, 100 ]
-gravity :right66,        [  34,   0,  66, 100 ]
-gravity :right33,        [  67,   0,  33, 100 ]
+#gravity :right66,        [  34,   0,  66, 100 ]
+#gravity :right33,        [  67,   0,  33, 100 ]
 
 # Bottom left
 gravity :bottom_left,    [   0,  50,  50,  50 ]
-gravity :bottom_left66,  [   0,  34,  50,  66 ]
-gravity :bottom_left33,  [   0,  67,  50,  33 ]
+#gravity :bottom_left66,  [   0,  34,  50,  66 ]
+#gravity :bottom_left33,  [   0,  67,  50,  33 ]
 
 # Bottom
 gravity :bottom,         [   0,  50, 100,  50 ]
-gravity :bottom66,       [   0,  34, 100,  66 ]
-gravity :bottom33,       [   0,  67, 100,  33 ]
+#gravity :bottom66,       [   0,  34, 100,  66 ]
+#gravity :bottom33,       [   0,  67, 100,  33 ]
 
 # Bottom right
 gravity :bottom_right,   [  50,  50,  50,  50 ]
-gravity :bottom_right66, [  50,  34,  50,  66 ]
-gravity :bottom_right33, [  50,  67,  50,  33 ]
+#gravity :bottom_right66, [  50,  34,  50,  66 ]
+#gravity :bottom_right33, [  50,  67,  50,  33 ]
 
 # Gimp
 gravity :gimp_image,     [  10,   0,  80, 100 ]
@@ -349,6 +352,7 @@ grab "W-1", :ViewSwitch1
 grab "W-2", :ViewSwitch2
 grab "W-3", :ViewSwitch3
 grab "W-4", :ViewSwitch4
+grab "W-5", :ViewSwitch5
 
 # Select next and prev view */
 grab "KP_Add",      :ViewNext
@@ -620,6 +624,7 @@ end
 tag "terms",   "xterm|[u]?rxvt"
 tag "browser", "uzbl|opera|firefox|navigator"
 tag "music",   "ncmpcpp"
+tag "steam",   "Steam"
 
 # Placement
 tag "editor" do
@@ -737,6 +742,7 @@ end
 view "terms", "terms|default"
 view "www",   "browser"
 view "music", "music"
+view "steam", "steam"
 view "desk",  ""
 
 #
