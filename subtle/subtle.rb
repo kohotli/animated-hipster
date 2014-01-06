@@ -150,7 +150,7 @@ whiteB = 	"#DBDAC1"
 # Style for all style elements
 style :all do
   background  bgcol
-  icon        red
+  icon        yellow
   border      bgcol, 0
   padding     0, 3
   #font        "-*-*-*-*-*-*-11-*-*-*-*-*-*-*"
@@ -163,7 +163,7 @@ style :views do
 
   # Style for the active views
   style :focus do
-    foreground  fgcol
+    foreground  yellow
   end
 
   # Style for urgent window titles and views
@@ -173,13 +173,13 @@ style :views do
 
   # Style for occupied views (views with clients)
   style :occupied do
-    foreground  red
+    foreground  fgcol
   end
 end
 
 # Style for sublets
 style :sublets do
-  foreground  red
+  foreground  yellowB
 end
 
 # Style for separator
@@ -190,7 +190,7 @@ end
 
 # Style for focus window title
 style :title do
-  foreground  red
+  foreground  yellow
 end
 
 # Style for active/inactive windows
