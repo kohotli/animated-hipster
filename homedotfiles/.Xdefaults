@@ -1,5 +1,3 @@
-Xcursor.theme: ecliz
-
 URxvt*termName: rxvt
 
 ## borderless and no scrollbar
@@ -7,30 +5,52 @@ URxvt*scrollBar_right: false
 URxvt*scrollBar: false
 URxvt*borderLess: false
 
-!*foreground: #FBF7AA
-*foreground: #FFFFFF
-*background: #212121
-*color0: #212121
-*color8: #424242
-*color1: #C95400
-*color9: #E58900
-*color2: #1DD600
-*color10: #4CEF00
-*color3: #C1A200
-*color11: #D4D800
-*color4: #0049D8
-*color12: #0089ED
-*color5: #7500AD
-*color13: #B500E2
-*color6: #00A3BA
-*color14: #00CEA9
-*color7: #EEEEEE
-*color15: #FBFBFB
+URxvt*depth: 32
+
+*cursorColor:                         #917154
+*colorIT:                             #E3AB8D
+*colorBD:                             #F0E5DF
+*colorUL:                             #cd546c
+*VT100.colorBDMode:                   true
+*VT100.colorBD:                       red
+*VT100.colorULMode:                   true
+*VT100.colorUL:                       magenta
+*VT100.veryBoldColors:                6
+
+
+*foreground:                          #eddcd3
+*background:                          #181512
+
+! Black                               Black !
+*color0:                              #252525
+*color8:                              #454545
+! Red                                 Red   !
+*color1:                              #CD546C
+*color9:                              #EF545F
+! Green                               Green !
+*color2:                              #A5AF86
+*color10:                             #BDC79E
+! Yellow                              Yellow!
+*color3:                              #CD7860
+*color11:                             #E88773
+! Blue                                Blue  !
+*color4:                              #7A9388
+*color12:                             #94B1A3
+! Magenta                             Magenta
+*color5:                              #917154
+*color13:                             #989584
+! Cyan                                Cyan  !
+*color6:                              #767D75
+*color14:                             #9DA69E
+! White                               White !
+*color7:                              #C2C2A8
+*color15:                             #DBDAC1
+
 
 ## Perl scripts
 URxvt.perl-ext-common:	default
 
 #URxvt*font: xft:inconsolata:size=10
-URxvt*font: xft:gohufont
+URxvt*font: xft:Neep:size=11
 
 URxvt.iconFile: /usr/share/icons/elementary/apps/128/utilities-terminal.svg

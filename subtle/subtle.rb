@@ -127,66 +127,87 @@ end
 #
 # http://subforge.org/projects/subtle/wiki/Styles
 
+# Color variable definitions
+fgcol = 	"#EDDCD3"
+bgcol = 	"#181512"
+black = 	"#252525"
+blackB = 	"#454545"
+red = 		"#CD546C"
+redB = 		"#EF545F"
+green = 	"#A5AF86"
+greenB = 	"#BDC79E"
+yellow = 	"#CD7860"
+yellowB = 	"#E88773"
+blue = 		"#7A9388"
+blueB = 	"#94B1A3"
+magenta = 	"#917154"
+magentaB = 	"#989584"
+cyan = 		"#767D75"
+cyanB = 	"#9DA69E"
+white = 	"#C2C2A8"
+whiteB = 	"#DBDAC1"
+
 # Style for all style elements
 style :all do
-  background  "#212121"
-  icon        "#7500AD"
-  border      "#212121", 0
+  background  bgcol
+  icon        red
+  border      bgcol, 0
   padding     0, 3
-  #font        "-*-*-*-*-*-*-14-*-*-*-*-*-*-*"
-  font        "xft:gohufont"
+  #font        "-*-*-*-*-*-*-11-*-*-*-*-*-*-*"
+  font        "xft:Neep:size=11"
 end
 
 # Style for the all views
 style :views do
-  foreground  "#0089ED"
+  foreground  blackB
 
   # Style for the active views
   style :focus do
-    foreground  "#C95400"
+    foreground  fgcol
   end
 
   # Style for urgent window titles and views
   style :urgent do
-    foreground  "#E000C9"
+    foreground  magenta
   end
 
   # Style for occupied views (views with clients)
   style :occupied do
-    foreground  "#00D315"
+    foreground  red
   end
 end
 
 # Style for sublets
 style :sublets do
-  foreground  "#C700D8"
+  foreground  red
 end
 
 # Style for separator
 style :separator do
-#  foreground  "#757575"
+  foreground  bgcol
   separator   "|"
 end
 
 # Style for focus window title
 style :title do
-  foreground  "#D4D800"
+  foreground  red
 end
 
 # Style for active/inactive windows
 style :clients do
-  active    "#212121", 0
-  inactive  "#212121", 0
-  margin    11
+  active    bgcol, 0
+  inactive  bgcol, 0
+  margin    0
+  #margin    15
   width     50
 end
 
 # Style for subtle
 style :subtle do
   margin      0, 0, 0, 0
-  panel       "#212121"
-  background  "#212121"
-  stipple     "#757575"
+  panel       bgcol
+  background  bgcol
+  stipple     red
 end
 
 #
