@@ -179,7 +179,7 @@ end
 
 # Style for sublets
 style :sublets do
-  foreground  yellowB
+  foreground  fgcol
 end
 
 # Style for separator
@@ -643,7 +643,7 @@ end
 
 # Simple tags
 tag "terms",   "xterm|[u]?rxvt"
-tag "browser", "uzbl|opera|firefox|navigator"
+tag "browser", "uzbl|opera|firefox|navigator|luakit"
 tag "music",   "ncmpcpp"
 tag "steam",   "Steam"
 
@@ -762,8 +762,8 @@ end
 
 view "terms", "terms|default"
 view "www",   "browser"
-view "music", "music"
 view "steam", "steam"
+view "music", "music"
 view "desk",  ""
 
 #
@@ -811,9 +811,6 @@ view "desk",  ""
 #
 # http://subforge.org/projects/subtle/wiki/Sublets
 #
-
-sublet :mpd do
-end
 
 #
 # == Hooks
