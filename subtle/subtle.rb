@@ -642,10 +642,11 @@ end
 #
 
 # Simple tags
-tag "terms",   "xterm|[u]?rxvt"
+tag "terms",   "xterm|[u]?rxvt|retroarch"
 tag "browser", "uzbl|opera|firefox|navigator|luakit|chromium"
 tag "music",   "ncmpcpp"
 tag "steam",   "Steam"
+tag "games",   "dota_linux|hl2_linux|teleglitch32|retroarch|openmw|FTL"
 
 # Placement
 tag "editor" do
@@ -763,8 +764,7 @@ end
 view "terms", "terms|default"
 view "www",   "browser"
 view "steam", "steam"
-view "music", "music"
-view "desk",  ""
+view "games",  "games"
 
 #
 # == Sublets
