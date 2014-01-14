@@ -643,7 +643,7 @@ end
 
 # Simple tags
 tag "terms",   "xterm|[u]?rxvt"
-tag "browser", "uzbl|opera|firefox|navigator|luakit"
+tag "browser", "uzbl|opera|firefox|navigator|luakit|chromium"
 tag "music",   "ncmpcpp"
 tag "steam",   "Steam"
 
