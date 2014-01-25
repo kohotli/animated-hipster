@@ -128,29 +128,29 @@ end
 # http://subforge.org/projects/subtle/wiki/Styles
 
 # Color variable definitions
-fgcol = 	"#FFFFFF"
-bgcol = 	"#222222"
-black = 	"#222222"
-blackB = 	"#555753"
-red = 		"#C84065"
-redB = 		"#F26C91"
-green = 	"#70E252"
-greenB = 	"#95FC7B"
-yellow = 	"#C8C039"
-yellowB = 	"#D1CB79"
-blue = 		"#74D9EE"
-blueB = 	"#A0EAF9"
-magenta = 	"#9F61BA"
-magentaB = 	"#C89BDC"
-cyan = 		"#7A9ECD"
-cyanB = 	"#AAC1DE"
-white = 	"#FFFFFF"
-whiteB = 	"#E4F8FF"
+fgcol = 	"#EDDCD3"
+bgcol = 	"#181512"
+black = 	"#252525"
+blackB = 	"#454545"
+red = 		"#CD546C"
+redB = 		"#EF545F"
+green = 	"#A5AF86"
+greenB = 	"#BDC79E"
+yellow = 	"#CD7860"
+yellowB = 	"#E88773"
+blue = 		"#7A9388"
+blueB = 	"#94B1A3"
+magenta = 	"#917154"
+magentaB = 	"#989584"
+cyan = 		"#767D75"
+cyanB = 	"#9DA69E"
+white = 	"#C2C2A8"
+whiteB = 	"#DBDAC1"
 
 # Style for all style elements
 style :all do
   background  bgcol
-  icon        magenta
+  icon        yellow
   border      fgcol, 0
   padding     0, 3
   #font        "-*-*-*-*-*-*-11-*-*-*-*-*-*-*"
@@ -159,11 +159,11 @@ end
 
 # Style for the all views
 style :views do
-  foreground  cyanB
+  foreground  blackB
 
   # Style for the active views
   style :focus do
-    foreground  blueB
+    foreground  yellow
   end
 
   # Style for urgent window titles and views
@@ -173,7 +173,7 @@ style :views do
 
   # Style for occupied views (views with clients)
   style :occupied do
-    foreground  whiteB
+    foreground  fgcol
   end
 end
 
@@ -190,7 +190,7 @@ end
 
 # Style for focus window title
 style :title do
-  foreground  blueB
+  foreground  yellow
 end
 
 # Style for active/inactive windows
