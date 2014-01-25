@@ -5,4 +5,9 @@ Wallpapers:
 subtle-butter:	http://i.imgur.com/UgnGjLO.jpg
 subtle-cubes:	http://i.imgur.com/ZIxynaN.jpg 
 
+Screenshots:
+
+subtle-butter:	http://i.imgur.com/SFi4GwG.png
+subtle-cubes:	http://i.imgur.com/T5CfU6o.png
+
 Currently used color scheme: subtle-cubes
