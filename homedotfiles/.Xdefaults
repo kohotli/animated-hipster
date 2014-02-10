@@ -1,56 +1,122 @@
-URxvt*termName: rxvt
+!=================!
+! Xresources file !
+!=================!
 
-## borderless and no scrollbar
-URxvt*scrollBar_right: false
-URxvt*scrollBar: false
-URxvt*borderLess: false
+!=========!
+!  URxvt* !
+!=========!
 
-URxvt*depth: 32
+! = Functionality = !
+!URxvt*depth: 32
 
-*cursorColor:                         #917154
-*colorIT:                             #E3AB8D
-*colorBD:                             #F0E5DF
-*colorUL:                             #cd546c
-*VT100.colorBDMode:                   true
-*VT100.colorBD:                       red
-*VT100.colorULMode:                   true
-*VT100.colorUL:                       magenta
-*VT100.veryBoldColors:                6
+!--------------!
+! Key Bindings !
+!--------------!
 
+URxvt*keysym.Home: \033[1~
+URxvt*keysym.End: \033[4~
 
-*foreground:                          #eddcd3
-*background:                          #181512
+!------!
+! Perl !
+!------!
 
-! Black                               Black !
-*color0:                              #252525
-*color8:                              #454545
-! Red                                 Red   !
-*color1:                              #CD546C
-*color9:                              #EF545F
-! Green                               Green !
-*color2:                              #A5AF86
-*color10:                             #BDC79E
-! Yellow                              Yellow!
-*color3:                              #CD7860
-*color11:                             #E88773
-! Blue                                Blue  !
-*color4:                              #7A9388
-*color12:                             #94B1A3
-! Magenta                             Magenta
-*color5:                              #917154
-*color13:                             #989584
-! Cyan                                Cyan  !
-*color6:                              #767D75
-*color14:                             #9DA69E
-! White                               White !
-*color7:                              #C2C2A8
-*color15:                             #DBDAC1
+URxvt*perl-ext-common: default
+
+!---------------------------!
+! Transparency / Background !
+!---------------------------!
 
 
-## Perl scripts
-URxvt.perl-ext-common:	default
+URxvt*transparent: 	false
+!URxvt*shading: 		10
+URxvt*background:	#2D2D2D
+URxvt*foreground:	#F9F9F9
+URxvt*pointerColor:	black
+URxvt*pointerColor2:	white
+URxvt*borderless:	true
+URxvt*colorMode: 	on
+URxvt*cursorBlink: 	true
+URxvt*internalBorder:	7
 
-#URxvt*font: xft:inconsolata:size=10
-URxvt*font: xft:Neep:size=11
+!-----------!
+! Scrollbar !
+!-----------!
 
-URxvt.iconFile: /usr/share/icons/elementary/apps/128/utilities-terminal.svg
+URxvt*scrollBar:	false
+
+
+!------!
+! Font !
+!------!
+
+URxvt*font:		xft:GohuFont:size=11
+URxvt*antialias:	false
+!URxvt*tintColor:	white
+
+!--------------!
+! Xft Settings !
+!--------------!
+
+Xft.dpi: 		66
+Xft.antialias: 		true
+Xft.rgba: 		rgb
+Xft.autohint: 		true
+Xft.hinting: 		true
+Xft.hintstyle: 		hintfull
+Xft.lcdfilter: 		lcddefault
+
+
+!!===========!!
+!!  Colours  !!
+!!===========!!
+
+
+!-------------------!
+! Black + Dark Grey !
+!-------------------!
+   *color0: #2D2D2D
+   *color8: #333333
+
+!---------------
+! Red + Dark Red
+!---------------
+   *color1: #C84065
+   *color9: #F26C91
+
+!-------------------
+! Green + Dark Green
+!-------------------
+   *color2: #70E252
+   *color10: #95FC7B
+
+!---------------------
+! Yellow + Dark Yellow
+!---------------------
+   *color3: #C8C039
+   *color11: #D1CB79
+
+!-----------------
+! Blue + Dark Blue
+!-----------------
+   *color4: #74D9EE
+   *color12: #A0EAF9
+
+!-----------------------
+! Purple + Dark Purple
+!-----------------------
+   *color5: #9F61BA
+   *color13: #C89BDC
+
+!-----------------
+! Cyan + Dark Cyan
+!-----------------
+    *color6: #7A9ECD
+    *color14: #AAC1DE
+
+!-----------------
+! White + Grey
+!-----------------
+   *color7: #F9F9F9
+   *color15: #DEDEDE
+
+
