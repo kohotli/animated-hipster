@@ -1,49 +1,30 @@
-## MPD SETTINGS
+mpd_crossfade_time = "0"
+mpd_music_dir = "/media/emily/Audio/"
 
-mpd_crossfade_time = "5"
-mpd_music_dir = "/home/emily/Music/"
 
-## USER INTERFACE
-
-#playlist_display_mode = "columns"
+song_list_format = "{ $8%a $1» $2}{%t} $R$1%b"
+song_status_format = "$8%a $1» $2%t $1» $1%b$8 (%y)$1"
+statusbar_color = "white"
+main_window_highlight_color = "red"
 header_visibility = "no"
-titles_visibility = "no"
-centered_cursor = "yes"
-autocenter_mode = "yes"
-cyclic_scrolling = "yes"
-enable_window_title = "yes"
-playlist_disable_highlight_delay = 0
-mouse_support = "no"
-song_list_format = "$8 {%y} %a $9$R$6 %t $9"
-song_columns_list_format = "(7)[cyan]{l} (28)[blue]{a} (65)[magenta]{t}"
-
-## VISUALIZER SETTINGS
-
-visualizer_fifo_path = "/tmp/mpd.fifo"
-visualizer_type = "spectrum"
-
-## CLOCK SETTINGS
-
-clock_display_seconds = "yes"
-
-## LYRICS
-
-lyrics_directory = "/home/emily/.lyrics/"
-store_lyrics_in_song_dir = "no"
-fetch_lyrics_for_current_song_in_background = "yes"
-
-## EXTERNAL SETTINGS
-
-external_editor = "/usr/bin/vim"
-use_console_editor = "yes"
-
-## COLORS
-
+statusbar_visibility = "no"
 colors_enabled = "yes"
-visualizer_color = "magenta"
+display_screens_numbers_on_start = "no"
+now_playing_prefix = "$b" 
+now_playing_suffix = "$/b"
+autocenter_mode = "yes"
+centered_cursor = "yes"
+color1 = "white"
 main_window_color = "white"
-main_window_highlight_color = "black"
-active_column_color = "cyan"
-empty_tag_color = "cyan"
-progressbar_color = "cyan"
-active_window_border = ""
+color2 = "red"
+progressbar_look = "── "
+titles_visibility = "no"
+mouse_support = "no"
+discard_colors_if_item_is_selected = "yes"
+cyclic_scrolling = "yes"
+
+message_delay_time = "1"
+allow_physical_directories_deletion = "no"
+allow_physical_files_deletion = "no"
+ask_before_clearing_main_playlist = "yes"
+playlist_disable_highlight_delay = "1"
