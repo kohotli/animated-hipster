@@ -9,37 +9,37 @@
 *VT100.veryBoldColors:                6
 
 
-*foreground:                          #eddcd3
-*background:                          #181512
+*foreground:                          #DDDDDD
+*background:                          #151515
 
 ! Black                               Black !
-*color0:                              #252525
-*color8:                              #454545
+*color0:                              #3B3B3B
+*color8:                              #3B3B3B
 ! Red                                 Red   !
-*color1:                              #CD546C
-*color9:                              #EF545F
+*color1:                              #CF6A4C
+*color9:                              #CF6A4C
 ! Green                               Green !
-*color2:                              #A5AF86
-*color10:                             #BDC79E
+*color2:                              #99AD6A
+*color10:                             #99AD6A
 ! Yellow                              Yellow!
-*color3:                              #CD7860
-*color11:                             #E88773
+*color3:                              #D8AD4C
+*color11:                             #D8AD4C
 ! Blue                                Blue  !
-*color4:                              #7A9388
-*color12:                             #94B1A3
+*color4:                              #597BC5
+*color12:                             #597BC5
 ! Magenta                             Magenta
-*color5:                              #917154
-*color13:                             #989584
+*color5:                              #A037B0
+*color13:                             #A037B0
 ! Cyan                                Cyan  !
-*color6:                              #767D75
-*color14:                             #9DA69E
+*color6:                              #71B9F8
+*color14:                             #71B9F8
 ! White                               White !
-*color7:                              #C2C2A8
-*color15:                             #DBDAC1
+*color7:                              #888888
+*color15:                             #ADADAD
 
 ! Font settings
 *antialias:		  false
-URxvt*font:		  xft:Inconsolata:size=12
+URxvt*font:		  xft:Inconsolata:size=16
 Xft.dpi:		  93x85
 Xft.antialias:		  true
 Xft.rgba:		  rgb
