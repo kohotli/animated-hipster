@@ -55,5 +55,5 @@ URxvt*scrollBar:	  false
 URxvt.depth:		  32
 
 ! Icon
-URxvt.iconFile:		  /usr/home/emily/.icons/Numix/128x128/devices/system.svg
+URxvt.iconFile:		  /home/amelia/.icons/Numix-Circle/48x48/applications/terminal.svg
 
