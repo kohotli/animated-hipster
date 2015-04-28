@@ -28,6 +28,7 @@ message_delay_time = "1"
 #allow_physical_files_deletion = "no"
 #ask_before_clearing_main_playlist = "yes"
 playlist_disable_highlight_delay = "1"
+playlist_display_mode = "classic"
 
 #Visualizer settings
 visualizer_fifo_path = "/tmp/mpd.fifo"
