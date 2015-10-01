@@ -46,6 +46,16 @@ nmap <c-h> <C-W>k
 nmap <c-v> <C-W>v
 nmap <c-n> <C-W>n
 nmap <c-c> <C-W>c
+"Rebind Sneak mode to F
+nmap f <Plug>Sneak_s
+nmap F <Plug>Sneak_S
+xmap f <Plug>Sneak_s
+xmap F <Plug>Sneak_S
+omap f <Plug>Sneak_s
+omap F <Plug>Sneak_S
+"Bind s to cl and S to cc
+map s cl
+map S cc
 
 "Color settings
 hi LineNr ctermbg=black

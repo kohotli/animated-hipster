@@ -4,15 +4,23 @@
 !urxvt*depth:			32
 urxvt*scrollBar:		false
 urxvt*dynamicColors:		on
-urxvt*font:			-*-neep-medium-*-semicondensed-*-11-*-*-*-*-*-*-*
+!urxvt*font:			-*-neep-medium-*-semicondensed-*-11-*-*-*-*-*-*-*
 urxvt*antialias:		0
 
-urxvt.transparent:		true
-urxvt.shading:			20
-urxvt.blurRadius:		90
-urxvt.fading:			20
+!urxvt.transparent:		true
+!urxvt.shading:			20
+!urxvt.blurRadius:		90
+!urxvt.fading:			20
 
 XTerm*metaSendsEscape: true
 
 !urxvt*cursorColor: #535C5C
 urxvt*cursorColor: #A89B8A
+
+Xft.antialias: 1
+Xft.autohint: 0
+Xft.dpi: 96
+Xft.hinting: 1
+Xft.hintstyle: hintfull
+Xft.lcdfilter: lcddefault
+Xft.rgba: rgb
