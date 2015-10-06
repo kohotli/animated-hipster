@@ -1,21 +1,25 @@
-#include "/home/amelia/.colors/waterfront"
+!#include "/home/amelia/.colors/waterfront"
+#include "/home/amelia/git/gruvbox-contrib/urxvt256/gruvbox-urxvt256.xresources"
+#include "/home/amelia/git/gruvbox-contrib/xresources/gruvbox-dark.xresources"
 !#include "/home/amelia/.colors/s3r0"
 
 !urxvt*depth:			32
 urxvt*scrollBar:		false
 urxvt*dynamicColors:		on
 !urxvt*font:			-*-neep-medium-*-semicondensed-*-11-*-*-*-*-*-*-*
+urxvt*font: xft:Source Code Pro for Powerline:pixelsize=14,xft:PowerlineSymbols:style=Medium
 urxvt*antialias:		0
 
 !urxvt.transparent:		true
-!urxvt.shading:			20
+!urxvt.shading:			0
 !urxvt.blurRadius:		90
 !urxvt.fading:			20
+urxvt*internalBorder:24
 
 XTerm*metaSendsEscape: true
 
 !urxvt*cursorColor: #535C5C
-urxvt*cursorColor: #A89B8A
+!urxvt*cursorColor: #A89B8A
 
 Xft.antialias: 1
 Xft.autohint: 0

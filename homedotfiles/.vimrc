@@ -16,6 +16,8 @@ Plugin 'gmarik/Vundle.vim'
 Bundle 'justinmk/vim-sneak'
 Bundle 'leafo/moonscript-vim'
 Bundle 'dag/vim-fish'
+Bundle 'morhetz/gruvbox'
+Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 "Plugin 'bling/vim-airline'
 "Vundle end settings
 call vundle#end()
@@ -58,14 +60,15 @@ map s cl
 map S cc
 
 "Color settings
-hi LineNr ctermbg=black
-hi LineNr ctermfg=blue
-hi CursorLineNr ctermfg=cyan
-hi CursorLineNr ctermbg=black
-hi Comment ctermfg=magenta
-hi Special ctermfg=red
-hi CursorLine ctermbg=black
-hi CursorColumn ctermbg=black
+"hi LineNr ctermbg=black
+"hi LineNr ctermfg=blue
+"hi CursorLineNr ctermfg=cyan
+"hi CursorLineNr ctermbg=black
+"hi Comment ctermfg=magenta
+"hi Special ctermfg=red
+"hi CursorLine ctermbg=black
+"hi CursorColumn ctermbg=black
+colorscheme gruvbox
 
 "Tab settings
 set list!
