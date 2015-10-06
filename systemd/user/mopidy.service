@@ -1,0 +1,9 @@
+[Unit]
+Description=Mopidy Daemon
+
+[Service]
+ExecStart=/usr/bin/mopidy
+Type=simple
+
+[Install]
+WantedBy=default.target
