@@ -12,7 +12,8 @@
 
 # Modifier key definition
 # Mod1 is Alt
-set $mod Mod1
+# Mod4 is the Win key, my xinitrc binds capslock to mod4 as well.
+set $mod Mod4
 
 # Font definition
 # The escaped spaces are required for dmenu-pango to work properly
