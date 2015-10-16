@@ -17,7 +17,9 @@ set $mod Mod4
 
 # Font definition
 # The escaped spaces are required for dmenu-pango to work properly
-set $font Source\ Code\ Pro\ for\ Powerline\ 14
+set $font Source\ Code\ Pro\ for\ Powerline\
+set $iconfont Icons
+set $fontsize 14
 
 # Color definitions
 # Anything starting with c is for client and i3bar color definitions
@@ -35,7 +37,7 @@ set $cub #CC241D
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
-font pango:$font
+font pango:$font, $iconfont $fontsize
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -48,7 +50,7 @@ bindsym $mod+x kill
 
 # start dmenu
 # Matches case-insensitively and launches at bottom of screen so top bar isn't obscured
-bindsym $mod+space exec dmenu_run -fn $font -nb "$nb" -nf "$nf" -sb "$sb" -sf "$sf" -b -i
+bindsym $mod+space exec dmenu_run -fn $font $fontsize -nb "$nb" -nf "$nf" -sb "$sb" -sf "$sf" -b -i
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -106,25 +108,28 @@ bindsym $mod+a focus parent
 
 # switch to workspace
 # Prefixing with <num>: keeps the workspaces ordered and the <num>: string gets hidden in i3bar by the setting strip_workspace_numbers yes in the i3bar configuration.
-bindsym $mod+1 workspace 1:
-bindsym $mod+2 workspace 2:
-bindsym $mod+3 workspace 3:
-bindsym $mod+4 workspace 4:
-bindsym $mod+5 workspace 5:
+bindsym $mod+1 workspace 1:
+bindsym $mod+2 workspace 2:
+bindsym $mod+3 workspace 3:
+bindsym $mod+4 workspace 4:
+bindsym $mod+5 workspace 5:
+bindsym $mod+6 workspace 6:
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1:
-bindsym $mod+Shift+2 move container to workspace 2:
-bindsym $mod+Shift+3 move container to workspace 3:
-bindsym $mod+Shift+4 move container to workspace 4:
-bindsym $mod+Shift+5 move container to workspace 5:
+bindsym $mod+Shift+1 move container to workspace 1:
+bindsym $mod+Shift+2 move container to workspace 2:
+bindsym $mod+Shift+3 move container to workspace 3:
+bindsym $mod+Shift+4 move container to workspace 4:
+bindsym $mod+Shift+5 move container to workspace 5:
+bindsym $mod+Shift+6 move container to workspace 6:
 
 # Workspace assignments
-assign [class="Chromium"] 1:
-assign [class="st-256color" title="IRC"] 2:
-assign [class="st-256color" title="Music"] 3:
-assign [class="st-256color"] 4:
-assign [class="Steam"] 5:
+assign [class="Chromium"] 1:
+assign [class="st-256color" title="IRC"] 2:
+assign [class="st-256color" title="Music"] 3:
+assign [class="st-256color"] 4:
+assign [class="Steam"] 5:
+assign [class="retroarch"] 6:
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -168,7 +173,7 @@ bar {
 	tray_output none
 	strip_workspace_numbers yes
 
-	font pango:Source Code Pro for Powerline,fontcustom 14
+	font pango:$font, $iconfont $fontsize
 	colors {
 		background	$nb
 		statusline	$sf
@@ -182,11 +187,12 @@ bar {
 }
 
 # Window configs
-for_window [class="Chromium" title="Chromium"] border none
+for_window [class="chromium"] border none
 for_window [class="URxvt"] border none
 for_window [class="st-256color"] border none
 for_window [class="Steam"] border none
 for_window [class="Vlc"] border none
+for_window [class="retroarch"] border none
 
 # Color configs
 # class	border	backgr.	text	indicator
@@ -201,3 +207,4 @@ exec ~/.bin/irc
 exec ~/.bin/music
 exec st
 exec steam
+exec retroarch
