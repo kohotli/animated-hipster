@@ -108,28 +108,30 @@ bindsym $mod+a focus parent
 
 # switch to workspace
 # Prefixing with <num>: keeps the workspaces ordered and the <num>: string gets hidden in i3bar by the setting strip_workspace_numbers yes in the i3bar configuration.
+bindsym $mod+grave workspace 0:
 bindsym $mod+1 workspace 1:
 bindsym $mod+2 workspace 2:
 bindsym $mod+3 workspace 3:
 bindsym $mod+4 workspace 4:
 bindsym $mod+5 workspace 5:
-bindsym $mod+6 workspace 6:
+bindsym $mod+6 workspace 6:
 
 # move focused container to workspace
+bindsym $mod+Shift+grave move container to workspace 0:
 bindsym $mod+Shift+1 move container to workspace 1:
 bindsym $mod+Shift+2 move container to workspace 2:
 bindsym $mod+Shift+3 move container to workspace 3:
 bindsym $mod+Shift+4 move container to workspace 4:
 bindsym $mod+Shift+5 move container to workspace 5:
-bindsym $mod+Shift+6 move container to workspace 6:
+bindsym $mod+Shift+6 move container to workspace 6:
 
 # Workspace assignments
 assign [class="Chromium"] 1:
 assign [class="st-256color" title="IRC"] 2:
 assign [class="st-256color" title="Music"] 3:
-assign [class="st-256color"] 4:
+assign [class="st-256color" title="Startup Terminal"] 4:
 assign [class="Steam"] 5:
-assign [class="retroarch"] 6:
+assign [class="retroarch"] 6:
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -199,12 +201,12 @@ for_window [class="retroarch"] border none
 client.focused	$sb	$sb	$sf	$sb
 client.focused_inactive	$nb	$nb	$nf	$nb
 client.unfocused	$nb	$nb	$cnf	$nb
-client.urgent	$cub	$nb	$sf	$nb
+client.urgent	$cub	$cub	$sf	$nb
 
 # Startup applications
 exec chromium
 exec ~/.bin/irc
 exec ~/.bin/music
-exec st
+exec st -t "Startup Terminal"
 exec steam
 exec retroarch
