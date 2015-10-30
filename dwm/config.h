@@ -14,7 +14,7 @@ static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "web", "chat", "term", "code", "misc" };
+static const char *tags[] = { "web", "chat", "term", "code", "steam", "game", "misc" };
 
 /*static const Rule rules[] = {
 	* class      instance    title       tags mask     isfloating   monitor *
@@ -24,8 +24,14 @@ static const char *tags[] = { "web", "chat", "term", "code", "misc" };
 */
 static const Rule rules[] = {
 	{ "chromium-browser",	NULL,	NULL,	1,	False,	-1 },
-	{ "rxvt-unicode-256color",	NULL,	NULL,	1 << 2,	False,	-1},
 	{ "Firefox",	NULL,	NULL,	1,	False,	-1},
+	{ "rxvt-unicode-256color",	NULL,	NULL,	1 << 2,	False,	-1},
+	{ "st-256color",	NULL,	"IRC",	1 << 1,	False,	-1},
+	{ "st-256color",	"st-256color",	"st",	1 << 2,	False,	-1},
+	{ "st-256color",	"st-256color",	"Startup Terminal",	1 << 2,	False,	-1},
+	{ "Steam",	NULL,	NULL,	1 << 4,	False,	-1},
+//Game Rules
+	{NULL,	NULL,	"CavesOfQud",	1 << 5,	False,	-1},
 };
 
 /* layout(s) */
@@ -41,7 +47,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY|ControlMask,           KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY,                       KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -80,11 +86,13 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	TAGKEYS(                        XK_grave,                  0)
-	TAGKEYS(                        XK_1,                      1)
-	TAGKEYS(                        XK_2,                      2)
-	TAGKEYS(                        XK_3,                      3)
-	TAGKEYS(                        XK_4,                      4)
+	TAGKEYS(                        XK_grave,                  6)
+	TAGKEYS(                        XK_1,                      0)
+	TAGKEYS(                        XK_2,                      1)
+	TAGKEYS(                        XK_3,                      2)
+	TAGKEYS(                        XK_4,                      3)
+	TAGKEYS(                        XK_5,                      4)
+	TAGKEYS(                        XK_6,                      5)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
