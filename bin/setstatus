@@ -1,0 +1,11 @@
+#!/usr/bin/sh
+
+while true; do
+	playing=$(getplaying)
+	if test "$playing"
+	then
+		xsetroot -name "$(echo -e $(getplaying) \| $(date +"%T"))"
+	else
+		xsetroot -name "$(date +"%T")"
+	fi
+done
