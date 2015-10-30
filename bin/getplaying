@@ -1,0 +1,3 @@
+#!/usr/bin/sh
+
+echo $(mpc current -f "[[%artist% - ]%title%]")
