@@ -1,0 +1,6 @@
+j	left-scroll
+l	right-scroll
+h	back-line
+k	forw-line
+#env
+LESS= -i -R
