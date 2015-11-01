@@ -81,6 +81,8 @@ set tabstop=2
 "Indent settings
 set autoindent
 set copyindent
+set cindent
+set noexpandtab
 
 "Cursor lines enable
 set cursorline
