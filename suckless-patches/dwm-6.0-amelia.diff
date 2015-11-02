@@ -1,0 +1,67 @@
+diff -up dwm-vanilla/config.def.h dwm-main/config.def.h
+--- dwm-vanilla/config.def.h	2015-10-31 00:29:16.388671916 -0700
++++ dwm-main/config.def.h	2015-11-01 16:21:14.197763402 -0800
+@@ -5,14 +5,14 @@ static const char font[]            = "S
+ static const char normbordercolor[] = "#282828";
+ static const char normbgcolor[]     = "#282828";
+ static const char normfgcolor[]     = "#EBDBB2";
+-static const char selbordercolor[]  = "#8EC07C";
+-static const char selbgcolor[]      = "#8EC07C";
++static const char selbordercolor[]  = "#B16286";
++static const char selbgcolor[]      = "#B16286";
+ static const char selfgcolor[]      = "#EBDBB2";
+-static const char occbordercolor[]  = "#FE8019";
+-static const char occbgcolor[]      = "#FE8019";
++static const char occbordercolor[]  = "#504945";
++static const char occbgcolor[]      = "#504945";
+ static const char occfgcolor[]      = "#EBDBB2";
+-static const char urgbordercolor[]  = "#FE8019";
+-static const char urgbgcolor[]      = "#FE8019";
++static const char urgbordercolor[]  = "#CC241D";
++static const char urgbgcolor[]      = "#CC241D";
+ static const char urgfgcolor[]      = "#EBDBB2";
+ static const unsigned int borderpx  = 0;        /* border pixel of windows */
+ static const unsigned int snap      = 0;       /* snap pixel */
+@@ -66,13 +66,26 @@ static const Layout layouts[] = {
+ #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
+ 
+ /* commands */
+-static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+-static const char *termcmd[]  = { "st", NULL };
++static const char *dmenucmd[]     = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
++static const char *termcmd[]      = { "st", NULL };
++static const char *embedstcmd[]   = { "/home/amelia/.bin/embedst", NULL };
++static const char *embedsurfcmd[] = { "/home/amelia/.bin/embedsurf",  NULL };
++
++/* mpc commands */
++static const char mpdhostname[]   = "artemis";
++static const char *mpdtogglecmd[] = { "mpc", "-h", mpdhostname, "toggle", NULL };
++static const char *mpdnextcmd[]   = { "mpc", "-h", mpdhostname, "next", NULL };
++static const char *mpdprevcmd[]   = { "mpc", "-h", mpdhostname, "prev", NULL };
+ 
+ static Key keys[] = {
+ 	/* modifier                     key        function        argument */
+ 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+ 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
++	{ MODKEY,                       XK_q,      spawn,          {.v = mpdprevcmd } },
++	{ MODKEY,                       XK_w,      spawn,          {.v = mpdnextcmd } },
++	{ MODKEY,                       XK_space,  spawn,          {.v = mpdtogglecmd } },
++	{ MODKEY,                       XK_s,      spawn,          {.v = embedsurfcmd } },
++	{ MODKEY,                       XK_t,      spawn,          {.v = embedstcmd } },
+ 	{ MODKEY,                       XK_b,      togglebar,      {0} },
+ 	{ MODKEY,                       XK_k,      focusstack,     {.i = +1 } },
+ 	{ MODKEY,                       XK_h,      focusstack,     {.i = -1 } },
+@@ -83,11 +96,8 @@ static Key keys[] = {
+ 	{ MODKEY,                       XK_Return, zoom,           {0} },
+ 	{ MODKEY,                       XK_Tab,    view,           {0} },
+ 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
+-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
+-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
+-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+-	{ MODKEY,                       XK_space,  setlayout,      {0} },
+-	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
++	/* { MODKEY,                       XK_space,  setlayout,      {0} }, */
++/* 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} }, */
+ 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
+ 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
+ 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
