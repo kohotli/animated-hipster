@@ -47,14 +47,21 @@ static const uint8_t borders[] = {3,5,5,4};
 static const char *ignore_names[] = {"bar", "xclock"};
 ///--Menus and Programs---///
 //static const char *menucmd[]   = { "dmenu_run", NULL };
-static const char *menucmd[]   = { "dmenu_run", "-fn", font, "-nb", dark0, "-nf", light1, "-sb", dark2, "-sf", light1, NULL };
-static const char *gmrun[]     = { "/usr/bin/gmrun",NULL};
-static const char *terminal[]  = { "st", NULL };
-static const char *embedst[]   = { "embedst", NULL };
-static const char *embedsurf[] = { "embedsurf", NULL };
-static const char *click1[]    = { "xdotool","click", "1", NULL };
-static const char *click2[]    = { "xdotool","click", "2", NULL };
-static const char *click3[]    = { "xdotool","click", "3", NULL };
+static const char *menucmd[]     = { "dmenu_run", "-fn", font, "-nb", dark0, "-nf", light1, "-sb", dark2, "-sf", light1, NULL };
+static const char *gmrun[]       = { "/usr/bin/gmrun",NULL};
+static const char *terminal[]    = { "st", NULL };
+static const char *embedst[]     = { "embedst", NULL };
+static const char *embedsurf[]   = { "embedsurf", NULL };
+static const char *click1[]      = { "xdotool","click", "1", NULL };
+static const char *click2[]      = { "xdotool","click", "2", NULL };
+static const char *click3[]      = { "xdotool","click", "3", NULL };
+
+/* Pianobar Programs and Controls */
+static const char *p_next[]      = { "/home/amelia/.bin/p_next.sh", NULL };
+static const char *p_like[]      = { "/home/amelia/.bin/p_like.sh", NULL };
+static const char *p_dislike[]   = { "/home/amelia/.bin/p_dislike.sh", NULL };
+static const char *p_toggle[]    = { "/home/amelia/.bin/p_toggle.sh", NULL };
+
 ///--Custom foo---///
 static void halfandcentered(const Arg *arg)
 {
@@ -197,10 +204,13 @@ static key keys[] = {
     //{  MOD |SHIFT,        XK_w,          start,             {.com = gmrun}},
     {  MOD ,              XK_s,          start,             {.com = embedsurf}},
     {  MOD ,              XK_t,          start,             {.com = embedst}},
+    // Pianobar Controls
+    {  MOD ,              XK_w,          start,             {.com = p_next}},
+    {  MOD ,              XK_space,      start,             {.com = p_toggle}},
     // Exit or restart 2bwm
     {  MOD |SHIFT,        XK_q,          twobwm_exit,       {.i=0}},
     //{  MOD |CONTROL,      XK_r,          twobwm_restart,    {.i=0}},
-    {  MOD ,              XK_space,      halfandcentered,   {.i=0}},
+    {  MOD |SHIFT,        XK_space,      halfandcentered,   {.i=0}},
     // Fake clicks using xdotool
     {  MOD |CONTROL,      XK_Up,         start,             {.com = click1}},
     {  MOD |CONTROL,      XK_Down,       start,             {.com = click2}},
