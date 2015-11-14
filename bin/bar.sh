@@ -43,7 +43,12 @@ function curtime() {
 	echo $TIME
 }
 
-echo "%{l}$(desk)%{r}$(battery) | $(curtime) %{}"
+function playing() {
+	p=$(grep '|>' /home/amelia/.config/pianobar/out | tail -n1 | cut -d'>' -f2 | sed 's/|>  //')
+	echo $p
+}
+
+	echo "%{l}$(desk)%{c}$(playing)%{r}$(battery) | $(curtime) %{}"
 }
 while :; do
 	echo $(statusbar)
