@@ -7,7 +7,7 @@ set background=dark
 set laststatus=2
 
 "Vundle options
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#begin()
 filetype off
 "Vundle plugins
@@ -16,11 +16,9 @@ Bundle 'justinmk/vim-sneak'
 Bundle 'leafo/moonscript-vim'
 Bundle 'dag/vim-fish'
 Bundle 'morhetz/gruvbox'
-Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-"Plugin 'bling/vim-airline'
 "Vundle end settings
 call vundle#end()
 filetype plugin indent on
@@ -69,7 +67,6 @@ map S cc
 "hi CursorLine ctermbg=black
 "hi CursorColumn ctermbg=black
 colorscheme gruvbox
-set columncolor=80
 
 "Tab settings
 set list!
