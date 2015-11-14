@@ -1,5 +1,5 @@
 ///---User configurable stuff---///
-static const char font[]            = "Source Code Pro:pixelsize=18:antialias=true";
+static const char font[]            = "Source Code Pro:pixelsize=14:antialias=true";
 
 /* Gruvbox Colors */
 #include "colors.h"
@@ -18,13 +18,19 @@ static const float    resize_keep_aspect_ratio= 1.03;
 ///---Offsets---///
 /*0)offsetx          1)offsety
  *2)maxwidth         3)maxheight */
-static const uint8_t offsets[] = {0,25,0,25};
+static const uint8_t offsets[] = {0,20,0,20};
 ///---Colors---///
 /*0)focuscol         1)unfocuscol
  *2)fixedcol         3)unkilcol
  *4)fixedunkilcol    5)outerbordercol
  *6)emptycol         */
-static const char *colors[] = {dark2,dark0,bright_yellow,bright_red,bright_orange,dark0,dark0};
+static const char *colors[] = {faded_aqua,
+				                       faded_aqua,
+				                       faded_green,
+				                       faded_blue,
+				                       faded_aqua,
+				                       dark2,
+				                       dark0};
 /*
  * If you are using a composition manager enable the COMPTON flag in the Makefile
  * (By changing -DNCOMPTON to -DCOMPTON)
@@ -47,7 +53,7 @@ static const uint8_t borders[] = {3,5,5,4};
 static const char *ignore_names[] = {"bar", "xclock"};
 ///--Menus and Programs---///
 //static const char *menucmd[]   = { "dmenu_run", NULL };
-static const char *menucmd[]     = { "dmenu_run", "-fn", font, "-nb", dark0, "-nf", light1, "-sb", dark2, "-sf", light1, NULL };
+static const char *menucmd[]     = { "dmenu_run", "-fn", font, "-nb", dark0, "-nf", light1, "-sb", faded_aqua, "-sf", light1, NULL };
 static const char *gmrun[]       = { "/usr/bin/gmrun",NULL};
 static const char *terminal[]    = { "st", NULL };
 static const char *embedst[]     = { "embedst", NULL };
