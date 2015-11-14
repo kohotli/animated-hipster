@@ -12,10 +12,18 @@ neutral_purple="#B16286"
 neutral_aqua="#689D6A"
 neutral_orange="#D65D0E"
 
+faded_red="#9D0006"
+faded_green="#79740E"
+faded_yellow="#B57614"
+faded_blue="#076678"
+faded_purple="#8F32F71"
+faded_aqua="#427B58"
+faded_orange="#AF3A03"
+
 BG=$dark0
 FG=$light1
-FONT="Source Code Pro:pixelsize=18"
-RES=" 1366x25+0+0"
+FONT="Source Code Pro:pixelsize=14"
+RES=" 1366x20+0+0"
 
 VIEW0="main"
 VIEW1="chat"
@@ -25,9 +33,9 @@ function statusbar {
 function desk() {
 	CUR=$(xprop -root _NET_CURRENT_DESKTOP | awk '{print $3}')
 	case $CUR in
-		0) echo "%{B$dark2} $VIEW0 %{B-}%{B$dark0} $VIEW1 %{B-}%{B$dark0} $VIEW2 %{B-}";;
-		1) echo "%{B$dark0} $VIEW0 %{B-}%{B$dark2} $VIEW1 %{B-}%{B$dark0} $VIEW2 %{B-}";;
-		2) echo "%{B$dark0} $VIEW0 %{B-}%{B$dark0} $VIEW1 %{B-}%{B$dark2} $VIEW2 %{B-}";;
+		0) echo "%{B$faded_aqua} $VIEW0 %{B-}%{B$dark0} $VIEW1 %{B-}%{B$dark0} $VIEW2 %{B-}";;
+		1) echo "%{B$dark0} $VIEW0 %{B-}%{B$faded_aqua} $VIEW1 %{B-}%{B$dark0} $VIEW2 %{B-}";;
+		2) echo "%{B$dark0} $VIEW0 %{B-}%{B$dark0} $VIEW1 %{B-}%{B$faded_aqua} $VIEW2 %{B-}";;
 		*) echo "%{B$dark0} $VIEW0 %{B-}%{B$dark0} $VIEW1 %{B-}%{B$dark0} $VIEW2 %{B-}";;
 	esac
 }
