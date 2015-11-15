@@ -1,0 +1,77 @@
+diff -up surf-vanilla/config.def.h surf-main/config.def.h
+--- surf-vanilla/config.def.h	2013-02-10 10:40:14.000000000 -0800
++++ surf-main/config.def.h	2015-11-01 15:42:25.144560262 -0800
+@@ -2,12 +2,12 @@
+ static char *useragent      = "Mozilla/5.0 (X11; U; Unix; en-US) "
+ 	"AppleWebKit/537.15 (KHTML, like Gecko) Chrome/24.0.1295.0 "
+ 	"Safari/537.15 Surf/"VERSION;
+-static char *progress       = "#0000FF";
+-static char *progress_untrust = "#FF0000";
+-static char *progress_trust = "#00FF00";
+-static char *progress_proxy = "#FFFF00";
+-static char *progress_proxy_trust = "#66FF00";
+-static char *progress_proxy_untrust = "#FF6600";
++static char *progress       = "#B16286";
++static char *progress_untrust = "#B16286";
++static char *progress_trust = "#B16286";
++static char *progress_proxy = "#B16286";
++static char *progress_proxy_trust = "#B16286";
++static char *progress_proxy_untrust = "#B16286";
+ static char *stylefile      = "~/.surf/style.css";
+ static char *scriptfile     = "~/.surf/script.js";
+ static char *cookiefile     = "~/.surf/cookies.txt";
+@@ -26,7 +26,7 @@ static Bool hidebackground  = FALSE;
+ 
+ #define SETPROP(p, q) { \
+ 	.v = (char *[]){ "/bin/sh", "-c", \
+-		"prop=\"`xprop -id $2 $0 | cut -d '\"' -f 2 | dmenu`\" &&" \
++		"prop=\"`xprop -id $2 $0 | cut -d '\"' -f 2 | dmenu -fn \"Source Code Pro:pixelsize=18:antialias=true\" -nb \"#282828\" -nf \"#EBDBB2\" -sb \"#B16286\" -sf \"#EBDBB2\" `\" &&" \
+ 		"xprop -id $2 -f $1 8s -set $1 \"$prop\"", \
+ 		p, q, winid, NULL \
+ 	} \
+@@ -59,17 +59,17 @@ static Key keys[] = {
+     { MODKEY,               GDK_p,      clipboard,  { .b = TRUE } },
+     { MODKEY,               GDK_y,      clipboard,  { .b = FALSE } },
+ 
+-    { MODKEY|GDK_SHIFT_MASK,GDK_j,      zoom,       { .i = -1 } },
+-    { MODKEY|GDK_SHIFT_MASK,GDK_k,      zoom,       { .i = +1 } },
++    { MODKEY|GDK_SHIFT_MASK,GDK_k,      zoom,       { .i = -1 } },
++    { MODKEY|GDK_SHIFT_MASK,GDK_h,      zoom,       { .i = +1 } },
+     { MODKEY|GDK_SHIFT_MASK,GDK_q,      zoom,       { .i = 0  } },
+     { MODKEY,               GDK_minus,  zoom,       { .i = -1 } },
+     { MODKEY,               GDK_plus,   zoom,       { .i = +1 } },
+ 
+     { MODKEY,               GDK_l,      navigate,   { .i = +1 } },
+-    { MODKEY,               GDK_h,      navigate,   { .i = -1 } },
++    { MODKEY,               GDK_j,      navigate,   { .i = -1 } },
+ 
+-    { MODKEY,               GDK_j,           scroll_v,   { .i = +1 } },
+-    { MODKEY,               GDK_k,           scroll_v,   { .i = -1 } },
++    { MODKEY,               GDK_k,           scroll_v,   { .i = +1 } },
++    { MODKEY,               GDK_h,           scroll_v,   { .i = -1 } },
+     { MODKEY,               GDK_b,           scroll_v,   { .i = -10000 } },
+     { MODKEY,               GDK_space,       scroll_v,   { .i = +10000 } },
+     { MODKEY,               GDK_i,           scroll_h,   { .i = +1 } },
+Only in surf-main/: surf-0.6-amelia.diff
+diff -up surf-vanilla/surf.c surf-main/surf.c
+--- surf-vanilla/surf.c	2013-02-10 10:40:14.000000000 -0800
++++ surf-main/surf.c	2015-10-31 22:09:00.733909252 -0700
+@@ -1125,15 +1125,14 @@ update(Client *c) {
+ 	gettogglestat(c);
+ 
+ 	if(c->linkhover) {
+-		t = g_strdup_printf("%s| %s", togglestat, c->linkhover);
++		t = g_strdup_printf("%s", c->linkhover);
+ 	} else if(c->progress != 100) {
+ 		drawindicator(c);
+ 		gtk_widget_show(c->indicator);
+-		t = g_strdup_printf("[%i%%] %s| %s", c->progress, togglestat,
+-				c->title);
++		t = g_strdup_printf("[%i%%] %s", c->progress, c->title);
+ 	} else {
+ 		gtk_widget_hide_all(c->indicator);
+-		t = g_strdup_printf("%s| %s", togglestat, c->title);
++		t = g_strdup_printf("%s", c->title);
+ 	}
+ 
+ 	gtk_window_set_title(GTK_WINDOW(c->win), t);
