@@ -1,7 +1,0 @@
-map k <down>
-map h <up>
-map j <left>
-map l <right>
-highlight Hint::after -append font-size: 11pt
-set hintchars="abcdefghijklmnopqrstuvwxyz"
-set gui=addons,nobookmarks,nomenu,navigation,tabs
