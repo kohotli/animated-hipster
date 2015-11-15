@@ -72,6 +72,7 @@ colorscheme gruvbox
 set list!
 set listchars=tab:>-,trail:·
 set tabstop=2
+set shiftwidth=2
 
 "Indent settings
 set autoindent
