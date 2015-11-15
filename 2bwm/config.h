@@ -24,11 +24,11 @@ static const uint8_t offsets[] = {0,20,0,20};
  *2)fixedcol         3)unkilcol
  *4)fixedunkilcol    5)outerbordercol
  *6)emptycol         */
-static const char *colors[] = {faded_aqua,
-				                       faded_aqua,
-				                       faded_green,
-				                       faded_blue,
-				                       faded_aqua,
+static const char *colors[] = {faded_purple,
+				                       faded_purple,
+				                       bright_yellow,
+				                       bright_orange,
+				                       bright_purple,
 				                       dark2,
 				                       dark0};
 /*
@@ -53,7 +53,7 @@ static const uint8_t borders[] = {3,5,5,4};
 static const char *ignore_names[] = {"bar", "xclock"};
 ///--Menus and Programs---///
 //static const char *menucmd[]   = { "dmenu_run", NULL };
-static const char *menucmd[]     = { "dmenu_run", "-fn", font, "-nb", dark0, "-nf", light1, "-sb", faded_aqua, "-sf", light1, NULL };
+static const char *menucmd[]     = { "dmenu_run", "-fn", font, "-nb", dark0, "-nf", light1, "-sb", faded_purple, "-sf", light1, NULL };
 static const char *gmrun[]       = { "/usr/bin/gmrun",NULL};
 static const char *terminal[]    = { "st", NULL };
 static const char *embedst[]     = { "embedst", NULL };
@@ -63,10 +63,10 @@ static const char *click2[]      = { "xdotool","click", "2", NULL };
 static const char *click3[]      = { "xdotool","click", "3", NULL };
 
 /* Pianobar Programs and Controls */
-static const char *p_next[]      = { "/home/amelia/.bin/p_next.sh", NULL };
-static const char *p_like[]      = { "/home/amelia/.bin/p_like.sh", NULL };
-static const char *p_dislike[]   = { "/home/amelia/.bin/p_dislike.sh", NULL };
-static const char *p_toggle[]    = { "/home/amelia/.bin/p_toggle.sh", NULL };
+static const char *p_next[]      = { "pianoctl", "\"n\"", NULL };
+static const char *p_like[]      = { "pianoctl", "\"+\"", NULL };
+static const char *p_dislike[]   = { "pianoctl", "\"-\"", NULL };
+static const char *p_toggle[]    = { "pianoctl", "\"p\"", NULL };
 
 ///--Custom foo---///
 static void halfandcentered(const Arg *arg)
@@ -223,6 +223,7 @@ static key keys[] = {
     {  MOD |CONTROL,      XK_Right,      start,             {.com = click3}},
 
     // Change current workspace
+       DESKTOPCHANGE(     XK_grave,                         9)
        DESKTOPCHANGE(     XK_1,                             0)
        DESKTOPCHANGE(     XK_2,                             1)
        DESKTOPCHANGE(     XK_3,                             2)
@@ -232,7 +233,6 @@ static key keys[] = {
        DESKTOPCHANGE(     XK_7,                             6)
        DESKTOPCHANGE(     XK_8,                             7)
        DESKTOPCHANGE(     XK_9,                             8)
-       DESKTOPCHANGE(     XK_0,                             9)
 };
 static Button buttons[] = {
     {  MOD        ,XCB_BUTTON_INDEX_1,     mousemotion,   {.i=TWOBWM_MOVE}},
