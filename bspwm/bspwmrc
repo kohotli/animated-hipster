@@ -18,7 +18,7 @@ bspc rule -a Vivaldi desktop=^2
 bspc rule -a mplayer2 floating=on
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
-bspc rule -a plasmashell manage=off
+bspc rule -a plasmashell floating=on
 
 bspc config normal_border_color "#282828"
 bspc config focused_border_color "#b16286"
