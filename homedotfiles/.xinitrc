@@ -1,10 +1,14 @@
+#!/usr/bin/env sh
+
+export GDK_SCALE=2
+export QT_SCALE_FACTOR=2
+
+#Mouse Config
 xset m 1 0 &
-xset r rate 250 33 &
-xrdb .Xresources &
-setxkbmap us -variant colemak
-xmodmap -e "remove lock = Caps_Lock"
-xmodmap -e "keycode 66 = Super_L NoSymbol Super_L" &
-hsetroot -fill ~/Wallpapers/luminati_wallpaper_by_mvasilkov-d7vxaud.png &
-mount /mnt &
-#exec i3
-exec ~/.bin/loopdwm
+
+#Keyboard Config
+setxkbmap us -variant colemak -option caps:super &
+hsetroot -fill ~/Pictures/chillhop\ radio\ bg.jpg &
+
+#Mount OneDrive Partition
+~/.scripts/mount_onedrive.bash &
