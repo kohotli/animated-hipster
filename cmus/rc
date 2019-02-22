@@ -1,0 +1,85 @@
+### SETTINGS
+
+set mouse=false
+set continue=true
+
+set format_title=%t
+set format_current= %a %= %l
+set format_trackwin=%3n. %t%= %d
+set format_statusline= %{status} %{?d?%t %= %1{continue}%1{follow}%1{repeat}%1{shuffle} %{position} / %d}
+
+set status_display_program=/home/mhf/.bin/cmus-status
+
+### COLORS
+
+# Directory colors
+set color_win_dir=5
+
+# Color of error messages displayed on the command line.
+set color_error=160
+
+# Color of informational messages displayed on the command line.
+set color_info=136
+
+# Color of the separator line between windows in view (1).
+set color_separator=0
+
+# Color of currently playing track.
+set color_win_cur=4
+
+# Window background color and normal text
+set color_win_bg=default
+set color_win_fg=default
+
+# Command line color.
+set color_cmdline_bg=default
+set color_cmdline_fg=default
+
+# Status line color.
+set color_statusline_bg=default
+set color_statusline_fg=default
+
+# Color of the line displaying currently playing track.
+set color_titleline_bg=default
+set color_titleline_fg=4
+
+# Color of the selected row which is also the currently playing track in active window.
+set color_win_cur_sel_bg=default
+set color_win_cur_sel_fg=4
+
+# Color of the selected row which is also the currently playing track in inactive window.
+set color_win_inactive_cur_sel_bg=default
+set color_win_inactive_cur_sel_fg=4
+
+# Color of selected row in inactive window.
+set color_win_inactive_sel_bg=default
+set color_win_inactive_sel_fg=default
+
+# Color of selected row in active window.
+set color_win_sel_bg=default
+set color_win_sel_fg=lightred
+
+# Color of window titles (topmost line of the screen).
+set color_win_title_bg=default
+set color_win_title_fg=0
+
+### SHORTCUTS
+
+unbind -f common <
+unbind -f common >
+unbind -f common ^E
+unbind -f common ^R
+unbind -f common ^L
+bind common > player-next
+bind common < player-prev
+#bind common ^E run st -e tagg {}
+bind common ^R refresh
+bind common ^L clear
+
+### Filters
+fset 90s=date>=1990&date<2000
+fset missing-tag=!stream&(artist=""|album=""|title=""|tracknumber=-1|date=-1)
+fset opus=filename="*.opus"
+fset mp3=filename="*.mp3"
+fset ogg=filename="*.ogg"
+factivate
