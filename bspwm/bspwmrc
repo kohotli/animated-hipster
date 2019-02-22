@@ -1,25 +1,118 @@
-#! /bin/sh
+#!/usr/bin/env racket
 
-sxhkd -m -1 &
-exec ~/.xinitrc &
+#lang racket/base
 
-bspc monitor -d web chat music term code misc
+(require racket/system)
+(require racket/list)
 
-bspc config border_width          5
-bspc config window_gap            24
-bspc config split_ratio           0.66
-bspc config borderless_monocle    true
-bspc config gapless_monocle       true
-bspc config bottom_padding        72
-bspc config focus_follows_pointer true
+;Form bspc command string
+(define
+ (form-bspc-string com)
+ (string-append "bspc " com))
 
-bspc rule -a Gimp desktop=^8 follow=on floating=on
-bspc rule -a Vivaldi desktop=^2
-bspc rule -a mplayer2 floating=on
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
-bspc rule -a plasmashell floating=on
+;Execute a command using bspc
+(define
+ (do-bspc-command com)
+ (system (form-bspc-string com)))
 
-bspc config normal_border_color "#282828"
-bspc config focused_border_color "#b16286"
-bspc config presel_border_color "#458588"
+;Set a string-valued configuration option using bspc
+(define
+ (bspc-config-string setting value)
+ (do-bspc-command
+  (string-append "config " setting " " value)))
+
+;Set a boolean-valued configuration option using bspc
+(define
+ (bspc-config-bool setting value)
+ (bspc-config-string setting (if value "true" "false")))
+
+;Set a numeric-valued configuration option using bspc
+(define
+ (bspc-config setting value)
+ (do-bspc-command
+  (string-append "config " setting " " (number->string value))))
+
+;Add window rule
+(define
+ (bspc-rule program rule)
+ (do-bspc-command
+  (string-append "rule --add " program " " rule)))
+
+;Reset window rules
+(define
+ (reset-window-rules program)
+ (do-bspc-command
+  (string-append "rule --remove " program)))
+
+;Set up colors
+;For some reason color values have to be double-quoted. No idea why, will fix asap.
+(define
+ (setup-colors
+  normal-border-color
+  focused-border-color
+  presel-feedback-color)
+ (bspc-config-string "normal_border_color" normal-border-color)
+ (bspc-config-string "focused_border_color" focused-border-color)
+ (bspc-config-string "presel_feedback_color" presel-feedback-color))
+
+;Add desktop
+(define
+ (add-desktop name)
+ (do-bspc-command
+  (string-append "monitor --add-desktops " name)))
+
+;Reset desktops
+(define
+ (reset-desktops names-string)
+ (do-bspc-command
+  (string-append "monitor --reset-desktops " names-string)))
+
+;Setup desktops
+;Takes list of strings
+(define
+ (setup-desktops names)
+ (reset-desktops (generate-desktop-string names)))
+
+;Generate strings for desktop setup
+(define
+ (generate-desktop-string names)
+ (cond
+  [(empty? names) ""]
+  [else (string-append (first names) " " (generate-desktop-string (rest names)))]))
+
+;Run .xinitrc
+(define (xinitrc) (system "~/.xinitrc"))
+
+;Start sxhkd
+(define
+ (start-sxhkd)
+ (system "sxhkd -m -1 &"))
+
+;Set up config options
+(define
+ (setup-configs)
+ ;(start-sxhkd)
+
+ (setup-desktops (list "web" "chat" "music" "term" "code" "misc"))
+
+ (bspc-config "border_width" 0)
+ (bspc-config "window_gap" 24)
+ (bspc-config "split_ratio" 0.66)
+ (bspc-config "bottom_padding" 72)
+
+ (bspc-config-bool "borderless_monocle" #t)
+ (bspc-config-bool "gapless_monocle" #t)
+ (bspc-config-bool "focus_follows_pointer" #t)
+
+ (setup-colors "'#282828'" "'#458588'" "'#98971A'")
+
+ (reset-window-rules "plasmashell")
+
+ (bspc-rule "plasmashell" "state=floating")
+ (bspc-rule "plasmashell" "focus=on")
+
+ (xinitrc))
+
+;Run the script
+(setup-configs)
+

@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + @space
-	dmenu_run
+	rofi -combi-modi window,drun -show combi -font "Undefined Medium 24" -yoffset 24 -xoffset 24
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -90,7 +90,7 @@ super + {_,shift + }{1-9,0}
 
 # preselect the direction
 super + ctrl + {h,j,k,l}
-	bspc node -p {west,south,north,east}
+	bspc node -p {north,west,south,east}
 
 # preselect the ratio
 super + ctrl + {1-9}
