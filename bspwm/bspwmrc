@@ -93,7 +93,7 @@
  (setup-configs)
  ;(start-sxhkd)
 
- (setup-desktops (list "web" "chat" "music" "term" "code" "misc"))
+ (setup-desktops (list "web" "chat" "♫" "'>_'" "λ" "etc"))
 
  (bspc-config "border_width" 0)
  (bspc-config "window_gap" 24)
