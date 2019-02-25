@@ -8,18 +8,23 @@
 ;Form bspc command string
 (define
  (form-bspc-string com)
- (string-append "bspc " com))
+ (cons (find-executable-path "bspc") com))
 
 ;Execute a command using bspc
+;(define
+; (do-bspc-command com)
+; (system (form-bspc-string com)))
+
+;Execute a command using bspc, taking a list of arguments
 (define
  (do-bspc-command com)
- (system (form-bspc-string com)))
+ (apply process* (form-bspc-string com)))
 
 ;Set a string-valued configuration option using bspc
 (define
  (bspc-config-string setting value)
  (do-bspc-command
-  (string-append "config " setting " " value)))
+  (list "config" setting value)))
 
 ;Set a boolean-valued configuration option using bspc
 (define
@@ -30,19 +35,19 @@
 (define
  (bspc-config setting value)
  (do-bspc-command
-  (string-append "config " setting " " (number->string value))))
+  (list "config" setting (number->string value))))
 
 ;Add window rule
 (define
  (bspc-rule program rule)
  (do-bspc-command
-  (string-append "rule --add " program " " rule)))
+  (list "rule" "--add" program rule)))
 
 ;Reset window rules
 (define
  (reset-window-rules program)
  (do-bspc-command
-  (string-append "rule --remove " program)))
+  (list "rule" "--remove" program)))
 
 ;Set up colors
 ;For some reason color values have to be double-quoted. No idea why, will fix asap.
@@ -59,26 +64,13 @@
 (define
  (add-desktop name)
  (do-bspc-command
-  (string-append "monitor --add-desktops " name)))
+ 	(list "monitor" "--add-desktops" name)))
 
 ;Reset desktops
 (define
- (reset-desktops names-string)
- (do-bspc-command
-  (string-append "monitor --reset-desktops " names-string)))
-
-;Setup desktops
-;Takes list of strings
-(define
  (setup-desktops names)
- (reset-desktops (generate-desktop-string names)))
-
-;Generate strings for desktop setup
-(define
- (generate-desktop-string names)
- (cond
-  [(empty? names) ""]
-  [else (string-append (first names) " " (generate-desktop-string (rest names)))]))
+ (do-bspc-command
+ 	(append '("monitor" "--reset-desktops") names)))
 
 ;Run .xinitrc
 (define (xinitrc) (system "~/.xinitrc"))
@@ -86,18 +78,18 @@
 ;Start sxhkd
 (define
  (start-sxhkd)
- (system "sxhkd -m -1 &"))
+ (process* (find-executable-path "sxhkd") "-m" "-1"))
 
 ;Set up config options
 (define
  (setup-configs)
- ;(start-sxhkd)
+ (start-sxhkd)
 
- (setup-desktops (list "web" "chat" "♫" "'>_'" "λ" "etc"))
+ (setup-desktops (list "web" "chat" "♫" "λ" ">_" "etc"))
 
  (bspc-config "border_width" 0)
  (bspc-config "window_gap" 24)
- (bspc-config "split_ratio" 0.66)
+ (bspc-config "split_ratio" 0.55)
  (bspc-config "bottom_padding" 72)
 
  (bspc-config-bool "borderless_monocle" #t)
