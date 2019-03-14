@@ -344,8 +344,8 @@ def_key "ctrl-j"
 #def_key "u"
 #  update_database
 #
-#def_key "ctrl-v"
-#  sort_playlist
+def_key "ctrl-v"
+  sort_playlist
 #
 #def_key "ctrl-r"
 #  reverse_playlist

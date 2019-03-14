@@ -1,10 +1,10 @@
 #!/usr/bin/sh
 
 while true; do
-	playing=$(getplaying)
+	playing=$(~/animated-hipster/bin/getplaying)
 	if test "$playing"
 	then
-		xsetroot -name "$(echo -e $(getplaying) \| $(date +"%T"))"
+		xsetroot -name "$(echo -e $playing \| $(date +"%T"))"
 	else
 		xsetroot -name "$(date +"%T")"
 	fi

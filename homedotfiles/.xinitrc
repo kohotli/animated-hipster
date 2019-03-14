@@ -1,18 +1,28 @@
 #!/usr/bin/env sh
 
-#UI Scaling
+#DPI Scaling
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export GDK_SCALE=2
-export QT_SCALE_FACTOR=2
+
+#Nvidia settings
+nvidia-settings --load-config-only &
 
 #Mouse Config
 xset m 1 0 &
 
 #Keyboard Config
 setxkbmap us -variant colemak -option caps:super &
-hsetroot -fill ~/Pictures/chillhop\ radio\ bg.jpg &
+xset r rate 250 33
+
+#Background
+#hsetroot -fill ~/Pictures/chillhop\ radio\ bg.jpg &
+hsetroot -fill ~/Pictures/joseph-barrientos-49318-unsplash.jpg &
 
 #Compositing
-compton -CGb --no-fading-openclose --vsync opengl &
+compton -b &
 
-#Mount OneDrive Partition
-~/.scripts/mount_onedrive.bash &
+~/animated-hipster/bin/setstatus &
+
+while :; do
+	dwm
+done

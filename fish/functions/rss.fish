@@ -1,3 +1,0 @@
-function rss
-	canto
-end

@@ -1,3 +1,3 @@
 function qwerty
-	setxkbmap us
+	setxkbmap us -option caps:super
 end

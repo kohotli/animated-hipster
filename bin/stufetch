@@ -1,3 +1,0 @@
-#!/bin/sh
-
-st -g 47x9 sh -c "ufetch; read"

@@ -2,7 +2,7 @@ set nu
 set ic
 set sm
 syntax enable
-set background=dark
+"set background=dark
 "set ruler
 set laststatus=2
 
@@ -19,6 +19,9 @@ Bundle 'morhetz/gruvbox'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'wlangstroth/vim-racket'
+Plugin 'guns/vim-sexp'
+Plugin 'dracula/vim'
 "Vundle end settings
 call vundle#end()
 filetype plugin indent on
@@ -31,7 +34,7 @@ set guioptions-=m
 set guioptions-=T
 set guioptions-=r
 set guifont=Inconsolata\ Medium\ 16
-set guiheadroom=0
+set termguicolors
 
 "Keybind options
 "Colemak specific
@@ -66,19 +69,25 @@ map S cc
 "hi Special ctermfg=red
 "hi CursorLine ctermbg=black
 "hi CursorColumn ctermbg=black
-colorscheme gruvbox
+"colorscheme gruvbox
+colorscheme dracula
 
 "Tab settings
 set list!
 set listchars=tab:>-,trail:·
-set tabstop=2
-set shiftwidth=2
+set tabstop=1
+set shiftwidth=1
 
 "Indent settings
 set autoindent
 set copyindent
 set cindent
 set noexpandtab
+
+"Indent settings for vim-racket
+if has("autocmd")
+	au filetype racket set expandtab
+endif
 
 "Cursor lines enable
 set cursorline

@@ -3,20 +3,18 @@ animated-hipster
 
 Amelia's dotfiles and configs for anything and everything.
 
-**WM**: 2bwm
+**WM**: Dwm (git version from late February 2019)
 
-**Shell**: Mksh
+**Shell**: Fish
 
-**Font**: Source Code Pro
+**Font**: Fira Code
 
 **Icon Font**: FontAwesome
 
-**Terminal Emulator**: St
+**Terminal Emulator**: St (git version from late February 2019)
 
-**Web Browser**: Surf
+**Web Browser**: Chromium
 
-**Window Tabber**: Tabbed
+**Music Player**: MPD with ncmpcpp
 
-**Music Player**: Pianobar
-
-Wallpaper link: http://i.imgur.com/LtEfP9k.png
+Wallpaper link: https://i.imgur.com/9T8mdOS.jpg
