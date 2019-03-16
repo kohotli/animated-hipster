@@ -16,7 +16,8 @@ xset r rate 250 33
 
 #Background
 #hsetroot -fill ~/Pictures/chillhop\ radio\ bg.jpg &
-hsetroot -fill ~/Pictures/joseph-barrientos-49318-unsplash.jpg &
+#hsetroot -fill ~/Pictures/joseph-barrientos-49318-unsplash.jpg &
+hsetroot -solid '#282A36'
 
 #Compositing
 compton -b &
