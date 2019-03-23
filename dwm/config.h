@@ -5,18 +5,30 @@ static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Fira Code Retina:pixelsize=32" "fontawesome" "Blobmoji" };
+static const char *fonts[]          = { "Fira Code Retina:pixelsize=32" "Material Icons" "Blobmoji" };
 static const char dmenufont[]       = "Fira Code Retina:pixelsize=32";
-static const char col_bg[]          = "#282A36";
 static const char col_border[]      = "#282A36";
-static const char col_fg[]          = "#F8F8F2";
 static const char col_sel_bg[]      = "#282A36";
-static const char col_sel_fg[]      = "#FF5555";
-static const char col_sel_border[]  = "#FF5555";
+static const char col_sel_fg[]      = "#FF79C6";
+static const char col_sel_border[]  = "#FF79C6";
+
+static const char col_bg[]          = "#282A36";
+static const char col_fg[]          = "#F8F8F2";
+static const char col_selection[]   = "#44475A";
+static const char col_curr_line[]   = "#44475A";
+static const char col_comment[]     = "#6272A4";
+static const char col_cyan[]        = "#8BE9FD";
+static const char col_green[]       = "#50FA7B";
+static const char col_orange[]      = "#FFB86C";
+static const char col_pink[]        = "#FF79C6";
+static const char col_purple[]      = "#BD93F9";
+static const char col_red[]         = "#FF5555";
+static const char col_yellow[]      = "#F1FA8C";
+
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_fg,     col_bg,     col_border },
-	[SchemeSel]  = { col_sel_fg, col_sel_bg, col_sel_border },
+	[SchemeNorm] = { col_fg,     col_bg,     col_bg },
+	[SchemeSel]  = { col_pink,   col_bg,     col_selection },
 };
 
 /* tagging */
@@ -57,7 +69,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_bg, "-nf", col_fg, "-sb", col_sel_bg, "-sf", col_sel_fg, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_bg, "-nf", col_fg, "-sb", col_bg, "-sf", col_pink, NULL };
 static const char *termcmd[]  = { "/usr/local/bin/st", NULL };
 static const char *mpdtogglecmd[] = { "mpc", "toggle", NULL };
 static const char *mpdnextcmd[] = { "mpc", "next", NULL };

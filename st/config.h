@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Fira Code Retina:pixelsize=28:antialias=true:autohint=true" "fontawesome:pixelsize=32";
+static char *font = "Fira Code Retina:pixelsize=28:antialias=true:autohint=true" "Material Icons";
 static int borderpx = 24;
 
 /*
