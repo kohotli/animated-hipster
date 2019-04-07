@@ -17,4 +17,6 @@ Amelia's dotfiles and configs for anything and everything.
 
 **Music Player**: MPD with ncmpcpp
 
-**Wallpaper link**: https://i.imgur.com/9T8mdOS.jpg
+**Wallpaper link**: https://i.imgur.com/mjKDJK8.jpg
+
+**Current Screenshots**: https://imgur.com/a/ZynIDOi
