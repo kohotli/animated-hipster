@@ -7,9 +7,9 @@ Amelia's dotfiles and configs for anything and everything.
 
 **Shell**: Fish
 
-**Font**: Fira Code
+**Font**: mononoki-Regular Nerd Font Complete Mono
 
-**Icon Font**: FontAwesome
+**Icon Font**: Nerd Font Complete
 
 **Terminal Emulator**: St (git version from late February 2019)
 
