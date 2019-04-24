@@ -1,13 +1,15 @@
 /* See LICENSE file for copyright and license details. */
 
+#include "/home/ko/.cache/wal/colors-wal-dwm.h"
+
 /* appearance */
 static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Fira Code Retina:pixelsize=32" "Material Icons" "Blobmoji" };
-static const char dmenufont[]       = "Fira Code Retina:pixelsize=32";
-static const char col_border[]      = "#282A36";
+static const char *fonts[]          = { "mononoki Nerd Font Mono:pixelsize=24" "Blobmoji" };
+static const char dmenufont[]       = "mononoki Nerd Font Mono:pixelsize=24";
+/* static const char col_border[]      = "#282A36";
 static const char col_sel_bg[]      = "#282A36";
 static const char col_sel_fg[]      = "#FF79C6";
 static const char col_sel_border[]  = "#FF79C6";
@@ -26,13 +28,14 @@ static const char col_red[]         = "#FF5555";
 static const char col_yellow[]      = "#F1FA8C";
 
 static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_fg,     col_bg,     col_bg },
-	[SchemeSel]  = { col_pink,   col_bg,     col_selection },
-};
+	               fg               bg          border   
+	[SchemeNorm]   = { col_fg,        col_bg,     col_bg },
+	[SchemeSel]    = { col_selection, col_bg,     col_selection },
+	[SchemeTitle]  = { col_pink,      col_bg,     col_selection },
+}; */
 
 /* tagging */
-static const char *tags[] = { "web", "chat", "♫", "λ", ">_", "etc" };
+static const char *tags[] = { "", "ﭮ", "", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -51,8 +54,8 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
+	{ "[T]",      tile },    /* first entry is default */
+	{ "[F]",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 };
 
@@ -69,7 +72,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_bg, "-nf", col_fg, "-sb", col_bg, "-sf", col_pink, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", norm_bg, "-nf", norm_fg, "-sb", norm_bg, "-sf", sel_bg, NULL };
 static const char *termcmd[]  = { "/usr/local/bin/st", NULL };
 static const char *mpdtogglecmd[] = { "mpc", "toggle", NULL };
 static const char *mpdnextcmd[] = { "mpc", "next", NULL };
@@ -86,6 +89,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_j,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
+	{ MODKEY|ShiftMask,             XK_l,      setcfact,       {.f = +0.25} },
+	{ MODKEY|ShiftMask,             XK_j,      setcfact,       {.f = -0.25} },
+	{ MODKEY|ShiftMask,             XK_o,      setcfact,       {.f = 0.00} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },

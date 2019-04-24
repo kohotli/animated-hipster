@@ -51,6 +51,10 @@ auto-completion-tab-key-behavior = "smart"
 enable = false
 
 [[layers]]
+name = 'checkers'
+enable = false
+
+[[layers]]
 name = 'shell'
 default_position = 'top'
 default_height = '100%'
