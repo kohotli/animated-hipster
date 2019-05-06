@@ -1,6 +1,6 @@
 {
-    "wallpaper": "/home/ko/Pictures/lovelace.png",
-    "alpha": 100,
+    "wallpaper": "/home/ko/git/animated-hipster/pywal/schemes/lovelace.png",
+    "alpha": "100",
 
     "special": {
         "background": "#1D1F28",
